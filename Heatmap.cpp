@@ -2,7 +2,7 @@
 // Created by ahmed on 15.06.2021.
 //
 
-#include "../Headers/HeatMap.h"
+#include "./HeatMap.h"
 
 HeatMap::HeatMap(cevd2 data, int leng, int hight)
 {
