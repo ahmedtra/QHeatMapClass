@@ -9,7 +9,8 @@
 #include <QPixmap>
 #include <QLabel>
 
-#include "Opt.h"
+typedef std::vector<double> cevd;
+typedef std::vector<cevd> cevd2;
 
 class HeatMap : public QLabel {
 public:
