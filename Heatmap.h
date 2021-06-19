@@ -7,10 +7,8 @@
 
 #include <QImage>
 #include <QPixmap>
-#include <QPainter>
-#include <QPrinter>
 #include <QLabel>
-#include <QWidget>
+
 #include "Opt.h"
 
 class HeatMap : public QLabel {
