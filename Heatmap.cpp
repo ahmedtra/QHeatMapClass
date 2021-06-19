@@ -11,15 +11,7 @@ HeatMap::HeatMap(cevd2 data, int leng, int hight)
     setData(data);
 };
 
-double HeatMap::maximum(cevd2 data){
-    double max = data[0][0];
-    for(int i = 0; i < data.size(); i++){
-        for(int j = 0; j < data[0].size(); j++) {
-            if(data[i][j] > max) max = data[i][j];
-        }
-    };
-    return max;
-}
+
 
 void HeatMap::setData(cevd2 data){
     imageD = new QImage(wdth, hght, QImage::Format_RGB32);
@@ -37,7 +29,7 @@ void HeatMap::setData(cevd2 data){
                 Rv = Rv;
             }
             QRgb value = qRgb(Rv, 0, 0);
-            imageD->setPixel(z, x, value);
+            imageD->setPixel(x, z, value);
         }
     };
 
@@ -48,6 +40,16 @@ void HeatMap::setData(cevd2 data){
     this->setPixmap(mainFrame);
 
     this->show();
+}
+
+double HeatMap::maximum(cevd2 data){
+    double max = data[0][0];
+    for(int i = 0; i < data.size(); i++){
+        for(int j = 0; j < data[0].size(); j++) {
+            if(data[i][j] > max) max = data[i][j];
+        }
+    };
+    return max;
 }
 
 double HeatMap::minimum(cevd2 data){
